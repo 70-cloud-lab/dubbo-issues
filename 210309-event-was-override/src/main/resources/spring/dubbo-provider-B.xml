@@ -21,7 +21,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="demo-provider3" metadata-type="remote">
+    <dubbo:application name="demo-provider-B" metadata-type="remote">
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:application>
 
