@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>210309-event-was-override</module>
+        <module>210310-multiple-service-discovery-bug</module>
     </modules>
 
     <properties>
