@@ -25,9 +25,9 @@
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:application>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181?registry-type=service"/>
+    <dubbo:registry id="reg1" address="zookeeper://127.0.0.1:2181?registry-type=service"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2182?registry-type=service"/>
+    <dubbo:registry id="reg2" address="zookeeper://127.0.0.1:2182?registry-type=service"/>
 
     <dubbo:metadata-report address="zookeeper://127.0.0.1:2183" />
 
