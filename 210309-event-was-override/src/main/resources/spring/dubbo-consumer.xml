@@ -31,13 +31,13 @@
 
     <dubbo:metadata-report address="zookeeper://127.0.0.1:2183" />
 
-    <dubbo:reference provided-by="demo-provider" id="demoService" check="false"
-                     interface="org.apache.dubbo.demo.DemoService"/>
+    <dubbo:reference provided-by="demo-provider" id="demoServiceA1" check="false"
+                     interface="org.apache.dubbo.demo.DemoServiceA1"/>
 
-    <dubbo:reference provided-by="demo-provider" id="demoService2" check="false"
-                     interface="org.apache.dubbo.demo.DemoService2"/>
+    <dubbo:reference provided-by="demo-provider" id="demoServiceA2" check="false"
+                     interface="org.apache.dubbo.demo.DemoServiceA2"/>
 
-    <dubbo:reference provided-by="demo-provider3" id="demoService3" check="false"
-                     interface="org.apache.dubbo.demo.DemoService3"/>
+    <dubbo:reference provided-by="demo-provider3" id="demoServiceB1" check="false"
+                     interface="org.apache.dubbo.demo.DemoServiceB1"/>
 
 </beans>

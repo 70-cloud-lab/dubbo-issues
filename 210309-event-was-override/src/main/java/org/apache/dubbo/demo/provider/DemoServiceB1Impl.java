@@ -16,12 +16,17 @@
  */
 package org.apache.dubbo.demo.provider;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.apache.dubbo.demo.DemoServiceB1;
+import org.apache.dubbo.rpc.RpcContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class Provider3 {
-    public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-provider3.xml");
-        context.start();
-        System.in.read();
+public class DemoServiceB1Impl implements DemoServiceB1 {
+    private static final Logger logger = LoggerFactory.getLogger(DemoServiceB1Impl.class);
+
+    @Override
+    public String sayHello(String name) {
+        logger.info("Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
+        return "Hello " + name + ", response from provider: " + RpcContext.getContext().getLocalAddress();
     }
 }

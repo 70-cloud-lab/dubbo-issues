@@ -16,9 +16,7 @@
  */
 package org.apache.dubbo.demo;
 
-import java.util.concurrent.CompletableFuture;
-
-public interface DemoService {
+public interface DemoServiceB1 {
 
     String sayHello(String name);
 

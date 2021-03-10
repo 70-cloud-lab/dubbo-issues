@@ -17,9 +17,9 @@
 package org.apache.dubbo.demo.consumer;
 
 import org.apache.dubbo.common.extension.ExtensionLoader;
-import org.apache.dubbo.demo.DemoService;
-import org.apache.dubbo.demo.DemoService2;
-import org.apache.dubbo.demo.DemoService3;
+import org.apache.dubbo.demo.DemoServiceA1;
+import org.apache.dubbo.demo.DemoServiceA2;
+import org.apache.dubbo.demo.DemoServiceB1;
 import org.apache.dubbo.event.AbstractEventDispatcher;
 import org.apache.dubbo.event.Event;
 import org.apache.dubbo.event.EventDispatcher;
@@ -41,9 +41,9 @@ public class Consumer {
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-consumer.xml");
         context.start();
-        DemoService demoService = context.getBean("demoService", DemoService.class);
-        DemoService2 demoService2 = context.getBean("demoService2", DemoService2.class);
-        DemoService3 demoService3 = context.getBean("demoService3", DemoService3.class);
+        DemoServiceA1 demoServiceA1 = context.getBean("demoServiceA1", DemoServiceA1.class);
+        DemoServiceA2 demoServiceA2 = context.getBean("demoServiceA2", DemoServiceA2.class);
+        DemoServiceB1 demoServiceB1 = context.getBean("demoServiceB1", DemoServiceB1.class);
 
         EventDispatcher ed = ExtensionLoader.getExtensionLoader(EventDispatcher.class).getDefaultExtension();
         ConcurrentMap<Class<? extends Event>, List<EventListener>> listenersCache = ((AbstractEventDispatcher) ed).getListenersCache();
@@ -60,7 +60,7 @@ public class Consumer {
 
         while (true) {
             System.in.read();
-            System.out.println("result: " + demoService.sayHello("123"));
+            System.out.println("result: " + demoServiceA1.sayHello("123"));
         }
     }
 }

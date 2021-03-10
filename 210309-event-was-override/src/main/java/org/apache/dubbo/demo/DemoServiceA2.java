@@ -14,19 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.dubbo.demo.provider;
+package org.apache.dubbo.demo;
 
-import org.apache.dubbo.demo.DemoService2;
-import org.apache.dubbo.rpc.RpcContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+public interface DemoServiceA2 {
 
-public class DemoService2Impl implements DemoService2 {
-    private static final Logger logger = LoggerFactory.getLogger(DemoService2Impl.class);
+    String sayHello(String name);
 
-    @Override
-    public String sayHello(String name) {
-        logger.info("Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
-        return "Hello " + name + ", response from provider: " + RpcContext.getContext().getLocalAddress();
-    }
 }

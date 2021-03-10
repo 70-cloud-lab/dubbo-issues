@@ -16,13 +16,14 @@
  */
 package org.apache.dubbo.demo.provider;
 
-import org.apache.dubbo.demo.DemoService3;
+import org.apache.dubbo.demo.DemoServiceA1;
 import org.apache.dubbo.rpc.RpcContext;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DemoService3Impl implements DemoService3 {
-    private static final Logger logger = LoggerFactory.getLogger(DemoService3Impl.class);
+public class DemoServiceA1Impl implements DemoServiceA1 {
+    private static final Logger logger = LoggerFactory.getLogger(DemoServiceA1Impl.class);
 
     @Override
     public String sayHello(String name) {

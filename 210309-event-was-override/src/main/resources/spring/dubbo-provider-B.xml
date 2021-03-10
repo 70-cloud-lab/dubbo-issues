@@ -33,8 +33,8 @@
 
     <dubbo:protocol name="dubbo" port="20882"/>
 
-    <bean id="demoService3" class="org.apache.dubbo.demo.provider.DemoService3Impl"/>
+    <bean id="demoServiceB1" class="org.apache.dubbo.demo.provider.DemoServiceB1Impl"/>
 
-    <dubbo:service interface="org.apache.dubbo.demo.DemoService3" timeout="3000" ref="demoService3"/>
+    <dubbo:service interface="org.apache.dubbo.demo.DemoServiceB1" timeout="3000" ref="demoServiceB1"/>
 
 </beans>
