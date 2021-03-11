@@ -18,10 +18,13 @@ package org.apache.dubbo.demo.consumer;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.apache.dubbo.demo.consumer.comp.MyBean1;
+import org.apache.dubbo.demo.consumer.comp.MyBean2;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
+import java.io.IOException;
 
 public class ConsumerAnnot {
     /**
@@ -32,7 +35,17 @@ public class ConsumerAnnot {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConsumerConfiguration.class);
         context.start();
         MyBean1 b1 = context.getBean("myBean1", MyBean1.class);
-        b1.test();
+        MyBean2 b2 = context.getBean("myBean2", MyBean2.class);
+        while (true) {
+            try {
+                System.in.read();
+                b1.test();
+                b2.test();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     @Configuration

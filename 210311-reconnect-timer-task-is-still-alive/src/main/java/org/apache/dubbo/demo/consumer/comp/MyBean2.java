@@ -23,11 +23,15 @@ import org.springframework.stereotype.Component;
 
 @Component("myBean2")
 public class MyBean2 {
-    @Reference(version = "2.0", check = false, parameters = {"a", "1"})
-    private DemoServiceA1 demoServiceA1;
+    @DubboReference(version = "2.0", check = false, parameters = {"a", "1"})
+    private DemoServiceA1 a1;
 
     public void test() {
-
+        try {
+            System.out.print(a1.sayHello("456"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
