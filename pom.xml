@@ -12,6 +12,7 @@
         <module>210309-event-was-override</module>
         <module>210310-multiple-service-discovery-bug</module>
         <module>210311-reconnect-timer-task-is-still-alive</module>
+        <module>210317-monitor-service-not-subscribed</module>
     </modules>
 
     <properties>
