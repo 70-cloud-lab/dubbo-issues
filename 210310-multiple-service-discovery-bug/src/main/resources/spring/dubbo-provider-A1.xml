@@ -25,7 +25,7 @@
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:application>
 
-    <dubbo:registry id="multi-sc" protocol="multiple" address="multiple:0.0.0.0:0?registry-type=service">
+    <dubbo:registry id="multi-sc" protocol="multiple" address="multiple://0.0.0.0:0?registry-type=service">
         <dubbo:parameter key="child.zk1" value="zookeeper://127.0.0.1:2181"/>
         <dubbo:parameter key="child.zk2" value="zookeeper://127.0.0.1:2182"/>
     </dubbo:registry>
