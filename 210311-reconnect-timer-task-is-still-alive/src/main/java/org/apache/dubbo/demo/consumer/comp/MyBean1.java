@@ -28,7 +28,7 @@ public class MyBean1 {
 
     public void test() {
         try {
-            System.out.print(a1.sayHello("123"));
+            System.out.println("Bean1:" +a1.sayHello("1"));
         } catch (Exception e) {
             e.printStackTrace();
         }
