@@ -53,7 +53,7 @@ public class Consumer {
             listenersCache.get(event).forEach(listener -> {
                 if (listener instanceof ServiceInstancesChangedListener) {
                     ServiceInstancesChangedListener listener1 = (ServiceInstancesChangedListener) listener;
-                    System.out.println(listener1.getServiceNames() + "->" + listener1.getUrl().getParameter(REGISTRY_CLUSTER_KEY) + ":" + listener1.getServiceDiscovery().getUrl());
+                    System.out.println(listener1.getServiceNames() + "->" + listener1.getUrl().getParameter(REGISTRY_CLUSTER_KEY) + ":" + listener1.getRegistryId());
                 }
             });
         });
