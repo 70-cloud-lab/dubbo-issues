@@ -17,7 +17,9 @@
 package org.apache.dubbo.demo.consumer.comp;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.Argument;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.demo.DemoServiceA1;
 import org.springframework.stereotype.Component;
 

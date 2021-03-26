@@ -19,6 +19,7 @@ package org.apache.dubbo.demo.consumer;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.apache.dubbo.demo.consumer.comp.MyBean1;
 import org.apache.dubbo.demo.consumer.comp.MyBean2;
+import org.apache.dubbo.demo.consumer.comp.MyBean3;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -36,11 +37,13 @@ public class ConsumerAnnot {
         context.start();
         MyBean1 b1 = context.getBean("myBean1", MyBean1.class);
         MyBean2 b2 = context.getBean("myBean2", MyBean2.class);
+        MyBean3 b3 = context.getBean("myBean3", MyBean3.class);
         while (true) {
             try {
                 System.in.read();
                 b1.test();
                 b2.test();
+                b3.test();
             } catch (Exception e) {
                 e.printStackTrace();
             }

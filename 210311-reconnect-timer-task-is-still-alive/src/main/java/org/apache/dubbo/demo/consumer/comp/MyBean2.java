@@ -17,13 +17,15 @@
 package org.apache.dubbo.demo.consumer.comp;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.Argument;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.demo.DemoServiceA1;
 import org.springframework.stereotype.Component;
 
 @Component("myBean2")
 public class MyBean2 {
-    @DubboReference(version = "2.0", check = false, parameters = {"a", "1"})
+    @DubboReference(version = "2.0", check = false, parameters = {"a", "2"})
     private DemoServiceA1 a1;
 
     public void test() {

@@ -29,4 +29,9 @@ public class DemoServiceA1Impl implements DemoServiceA1 {
         logger.info("Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
         return "A1 " + RpcContext.getContext().getLocalAddress();
     }
+
+    @Override
+    public String test() {
+        return null;
+    }
 }

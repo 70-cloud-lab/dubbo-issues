@@ -14,11 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.dubbo.demo;
+package org.apache.dubbo.demo.consumer.comp;
 
-public interface DemoServiceA1 {
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.demo.DemoServiceA1;
+import org.springframework.stereotype.Component;
 
-    String sayHello(String name);
+@Component("myBean3")
+public class MyBean3 {
+    @DubboReference(version = "2.0", check = false, parameters = {"a", "3"})
+    private DemoServiceA1 a1;
 
-    String test();
+    public void test() {
+        try {
+            System.out.println("Bean3:" +a1.sayHello("3"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
