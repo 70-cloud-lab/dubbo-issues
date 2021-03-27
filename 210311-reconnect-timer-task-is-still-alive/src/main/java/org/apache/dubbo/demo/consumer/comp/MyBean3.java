@@ -16,13 +16,20 @@
  */
 package org.apache.dubbo.demo.consumer.comp;
 
+import org.apache.dubbo.config.annotation.Argument;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.demo.DemoServiceA1;
 import org.springframework.stereotype.Component;
 
 @Component("myBean3")
 public class MyBean3 {
-    @DubboReference(version = "2.0", check = false, parameters = {"a", "3"})
+    @DubboReference(version = "2.0", check = false, parameters = {"a", "3"},
+            methods = {
+                    @Method(name = "sayHello", timeout = 100, arguments = @Argument(callback = true, type = "String")),
+                    @Method(name = "test", timeout = 300)
+            }
+    )
     private DemoServiceA1 a1;
 
     public void test() {
