@@ -26,8 +26,8 @@ import org.springframework.stereotype.Component;
 public class MyBean3 {
     @DubboReference(version = "2.0", check = false, parameters = {"a", "3"},
             methods = {
-                    @Method(name = "sayHello", timeout = 100, arguments = @Argument(callback = true, type = "String")),
-                    @Method(name = "test", timeout = 300)
+                    @Method(name = "sayHello", timeout = 1000, arguments = @Argument(callback = true, type = "String")),
+                    @Method(name = "test", timeout = 3000)
             }
     )
     private DemoServiceA1 a1;
