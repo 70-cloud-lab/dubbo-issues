@@ -21,18 +21,15 @@ import org.apache.dubbo.demo.DemoServiceA1;
 import org.apache.dubbo.event.EventDispatcher;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Consumer {
+public class ConsumerInJVM {
     /**
      * In order to make sure multicast registry works, need to specify '-Djava.net.preferIPv4Stack=true' before
      * launch the application
      */
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-consumer.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/dubbo-consumer-injvm.xml");
         context.start();
-        DemoServiceA1 demoServiceA1 = context.getBean("demoServiceA1", DemoServiceA1.class);
-
-        EventDispatcher ed = ExtensionLoader.getExtensionLoader(EventDispatcher.class).getDefaultExtension();
-//        ConcurrentMap<Class<? extends Event>, List<EventListener>> listenersCache = ((AbstractEventDispatcher) ed).getListenersCache();
+        DemoServiceA1 demoServiceA1 = context.getBean("ref-demoServiceA1", DemoServiceA1.class);
 
         while (true) {
             System.in.read();

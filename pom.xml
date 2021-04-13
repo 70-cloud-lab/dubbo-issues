@@ -15,12 +15,13 @@
         <module>210309-event-was-override</module>
         <module>210310-multiple-service-discovery-bug</module>
         <module>210311-reconnect-timer-task-is-still-alive</module>
-        <module>210317-monitor-service-not-subscribed</module>
+        <module>210413-injvm-async</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <DUBBO_MASTER_VERSION>2.7.11-SNAPSHOT</DUBBO_MASTER_VERSION>
     </properties>
 
 </project>

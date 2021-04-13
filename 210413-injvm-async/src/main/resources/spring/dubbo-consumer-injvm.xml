@@ -21,20 +21,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="demo-provider" metadata-type="remote">
+    <dubbo:application name="demo-consumer-injvm" metadata-type="remote">
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:application>
 
-    <dubbo:registry id="zk1" address="zookeeper://127.0.0.1:2181?registry-type=service"/>
+    <dubbo:registry id="zk1" address="zookeeper://127.0.0.1:2181"/>
 
     <dubbo:metadata-report address="zookeeper://127.0.0.1:2183" />
 
     <dubbo:protocol name="dubbo" port="20881"/>
 
-    <dubbo:monitor protocol="registry"/>
-
     <bean id="demoServiceA1" class="org.apache.dubbo.demo.provider.DemoServiceA1Impl"/>
 
     <dubbo:service interface="org.apache.dubbo.demo.DemoServiceA1" timeout="3000" ref="demoServiceA1"/>
+
+    <dubbo:reference id="ref-demoServiceA1" check="false" interface="org.apache.dubbo.demo.DemoServiceA1" async="true"/>
 
 </beans>
