@@ -16,6 +16,7 @@
         <module>210310-multiple-service-discovery-bug</module>
         <module>210311-reconnect-timer-task-is-still-alive</module>
         <module>210413-injvm-async</module>
+        <module>210415-enable-dubbo-service-xxx-in-properties</module>
     </modules>
 
     <properties>
