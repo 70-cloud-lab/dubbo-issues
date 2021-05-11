@@ -22,7 +22,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <DUBBO_MASTER_VERSION>2.7.11-SNAPSHOT</DUBBO_MASTER_VERSION>
+        <DUBBO_MASTER_VERSION>2.7.12-SNAPSHOT</DUBBO_MASTER_VERSION>
     </properties>
 
 </project>

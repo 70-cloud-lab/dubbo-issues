@@ -35,6 +35,8 @@
 
     <dubbo:service interface="org.apache.dubbo.demo.DemoServiceA1" timeout="3000" ref="demoServiceA1"/>
 
-    <dubbo:reference id="ref-demoServiceA1" check="false" interface="org.apache.dubbo.demo.DemoServiceA1" async="true"/>
+    <dubbo:reference id="ref-demoServiceA1" check="false" interface="org.apache.dubbo.demo.DemoServiceA1" async="true">
+        <dubbo:method name="sayHello" onreturn="demoServiceA1.doReturn"/>
+    </dubbo:reference>
 
 </beans>

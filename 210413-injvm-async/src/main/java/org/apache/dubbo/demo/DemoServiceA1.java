@@ -20,4 +20,5 @@ public interface DemoServiceA1 {
 
     String sayHello(String name);
 
+    public void doReturn(String out, String in);
 }

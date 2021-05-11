@@ -18,6 +18,7 @@ package org.apache.dubbo.demo.provider;
 
 import org.apache.dubbo.demo.DemoServiceA1;
 import org.apache.dubbo.rpc.RpcContext;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,13 @@ public class DemoServiceA1Impl implements DemoServiceA1 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        logger.info("Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
-        return "A1 " + RpcContext.getContext().getLocalAddress();
+        logger.info(Thread.currentThread().getName());
+        return RpcContext.getContext().getRemoteAddressString() + "->" + RpcContext.getContext().getLocalAddress();
+    }
+
+    @Override
+    public void doReturn(String out, String in) {
+        System.out.println(out);
+        System.out.println(in);
     }
 }
