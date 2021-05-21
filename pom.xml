@@ -17,6 +17,7 @@
         <module>210311-reconnect-timer-task-is-still-alive</module>
         <module>210413-injvm-async</module>
         <module>210415-enable-dubbo-service-xxx-in-properties</module>
+        <module>210512-onreturn-not-work</module>
     </modules>
 
     <properties>
