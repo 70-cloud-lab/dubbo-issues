@@ -18,6 +18,7 @@
         <module>210413-injvm-async</module>
         <module>210415-enable-dubbo-service-xxx-in-properties</module>
         <module>210512-onreturn-not-work</module>
+        <module>210608-write-a-override-cause-unnecessary-reregister</module>
     </modules>
 
     <properties>
