@@ -20,6 +20,7 @@
         <module>210512-onreturn-not-work</module>
         <module>210608-write-a-override-cause-unnecessary-reregister</module>
         <module>210622-test-config-center</module>
+        <module>210715-refactor-monitor-initialize-and-filter</module>
     </modules>
 
     <properties>
